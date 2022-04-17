@@ -1,0 +1,7 @@
+- name: courses-service
+          image: courses-service 
+		  ports:
+		    -  containerPort: 9002
+	 volumes:
+		- name: users-db-volume
+		- name: courses-db-volume

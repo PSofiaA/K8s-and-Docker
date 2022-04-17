@@ -1,0 +1,6 @@
+- name: users-service
+          image: users-service
+		  ports:
+		    - containerPort: 9001
+		  env:
+		    -name: 
