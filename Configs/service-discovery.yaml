@@ -1,7 +1,10 @@
 apiVersion: v1
-kind: Deployment
+kind: Pod
 metadata:
-  - name: service-discovery
+name:
+spec:
+  containers:
+    - name: service-discovery
       image: service-discovery
       ports:
         - containerPort: 8761

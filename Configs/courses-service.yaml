@@ -1,7 +1,10 @@
-- name: courses-service
-          image: courses-service 
-		  ports:
-		    -  containerPort: 9002
-	 volumes:
-		- name: users-db-volume
-		- name: courses-db-volume
+apiVersion: v1
+kind: Pod
+metadata:
+  name: api-gateway
+spec:
+	containers:
+		- name: courses-service
+		image: courses-service
+		ports:
+			-  containerPort: 9002

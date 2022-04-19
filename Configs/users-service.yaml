@@ -1,4 +1,10 @@
-- name: users-service
-          image: users-service
+apiVersion: v1
+kind: Pod
+metadata: 
+  name: users-service
+spec:
+  containers:          
+  	- name: users-service
+      image: users-service
 		  ports:
 		    - containerPort: 9001

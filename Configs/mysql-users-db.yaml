@@ -1,27 +1,20 @@
 apiVersion: v1
-kind: Deployment
+kind: Pod
 metadata: 
   name: mysql-users-db
 spec:
-  selector:
-    matchLabels: mysql-users-db
-  replicas: 1
-  template:
-    metadata:
-      labels:
-        app: course-management-system
-    spec:
-      containers:
-      - name: mysql-users-db
-          image: mysql:5.7
+  containers:
+    - name: mysql-users-db
+      image: mysql:5.7
       ports:
-        -  containerPort: 3306
-      env:
-            - name: MYSQL_DATABASE
-              value: users
-      - name: MYSQL_TCP_PORT
-              value: 3306  
-        command: [ 'mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci' ]
+      - containerPort: 3306
       volumeMounts:
-        - mountPath: /var/lib/mysql
-        name: users-db-volume
+      - name: users-db-volume
+        mountPath: /var/lib/mysql
+      env:
+      - name: MYSQL_DATABASE
+        value: users
+      - name: MYSQL_TCP_PORT
+        value: 3306  
+#command: [ 'mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci' ]
+  
