@@ -1,0 +1,14 @@
+kubectl apply -f deployment.yaml
+kubectl get deployments #check status
+kubectl get pods #get pods information
+kubectl logs [NAME] #fetch the logs of running pods
+
+#In the root project directory, theres a file named service.yaml
+#kubernetes supports 4 types of service
+#NodePort: here we expose our application to the node in which our PODs are running.
+#ClusterIP: here our application is only accessible in the K8S private network and can’t be accessed from the outside world.
+#LoadBalancer: the type that’s most used in production because we can have multiple instances running in different nodes inside the K8S cluster. to use this type we should route the traffic from the external IP address to the cluster network in order to deliver packets.
+#No service type: used to statically expose a service. An example of that would be a database or a third-party service provider.
+
+kubectl apply -f service.yaml
+kubectl get service #check the service status
