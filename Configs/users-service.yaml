@@ -3,6 +3,11 @@ kind: Service
 metadata: 
   name: users-service
 spec:
+	initContainers:
+		- name: mysql-users-db
+      image: mysql:5.7
+    - name: service-discovery
+      image: service-discovery
   containers:          
   	- name: users-service
       image: users-service

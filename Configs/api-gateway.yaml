@@ -3,6 +3,9 @@ kind: Pod
 metadata:
   name: api-gateway
 spec:
+	initContainers:
+    - name: service-discovery
+      image: service-discovery
 	containers:
 		-name: api-gateway
      image: api-gateway 

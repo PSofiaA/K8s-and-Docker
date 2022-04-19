@@ -3,6 +3,9 @@ kind: Service
 metadata:
 	name: auth-service
 spec:
+	initContainers:
+    - name: service-discovery
+      image: service-discovery
 	containers:
 	- name: auth-service
     image: auth-service

@@ -3,6 +3,11 @@ kind: Pod
 metadata:
   name: courses-service
 spec:
+	initContainers:
+		- name: mysql-courses-db
+      image: mysql:5.7
+    - name: service-discovery
+      image: service-discovery
 	containers:
 		- name: courses-service
 		image: courses-service
