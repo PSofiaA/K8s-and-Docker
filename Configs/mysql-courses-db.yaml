@@ -16,7 +16,7 @@ spec:
         value: courses
       - name: MYSQL_TCP_PORT
         value: 3307
-        #command: [ 'mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci' ]   
+        command: [ 'mysqld', '--character-set-server=utf8mb4', '--collation-server=utf8mb4_unicode_ci' ]   
      
         
     
